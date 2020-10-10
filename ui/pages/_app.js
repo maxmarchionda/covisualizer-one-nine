@@ -1,7 +1,7 @@
 import { ChakraProvider, css, Global } from '@chakra-ui/core'
 import seo from '../seo.config.js'
 import { DefaultSeo } from 'next-seo'
-import { customTheme } from '../utils/theme.js'
+import { customTheme } from '../ui/utils/theme.js'
 
 function MyApp({ Component, pageProps }) {
     return (
