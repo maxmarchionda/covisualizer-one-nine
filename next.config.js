@@ -1,0 +1,22 @@
+let nextConfig = {
+    // Environment vars exposed to client-side
+    env: {
+        REACT_APP_FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+        REACT_APP_FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+        REACT_APP_FIREBASE_DATABASE_URL: process.env.FIREBASE_DATABASE_URL,
+        REACT_APP_FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+        REACT_APP_FIREBASE_STORAGE_BUCKET:
+            process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+        REACT_APP_FIREBASE_MESSAGING_SENDER_ID:
+            process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+        REACT_APP_FIREBASE_APP_ID: process.env.REACT_APP_FIREBASE_APP_ID,
+        REACT_APP_FIREBASE_MEASUREMENT_ID:
+            process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+        // REACT_APP_FORMSPREE_CONTACT_ID: process.env.FORMSPREE_CONTACT_ID,
+
+        // REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID:
+        //     process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+    },
+}
+
+module.exports = nextConfig
