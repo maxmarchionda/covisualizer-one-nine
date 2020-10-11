@@ -1,22 +1,5 @@
 import { theme } from '@chakra-ui/core'
 
-// import EuclidCircularA from "@public/fonts/EuclidCircularA-Regular.ttf";
-
-const customIcons = {
-    icon1: {
-        path: <path fill="currentColor" d="..." />,
-        // If the icon's viewBox is `0 0 24 24`, you can ignore `viewBox`
-        viewBox: '0 0 40 40',
-    },
-    icon2: {
-        path: (
-            <g fill="currentColor">
-                <path d="..." />
-            </g>
-        ),
-    },
-}
-
 const customColors = {
     gray: {
         50: '#EDEDED',
@@ -43,10 +26,6 @@ export const customTheme = {
     colors: {
         ...theme.colors,
         ...customColors,
-    },
-    icons: {
-        ...theme.icons,
-        ...customIcons,
     },
     fonts: {
         ...customFonts,

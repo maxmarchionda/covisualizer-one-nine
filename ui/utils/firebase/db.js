@@ -23,6 +23,23 @@ export function createUser(uid, data) {
         .set({ uid, ...data }, { merge: true })
 }
 
+/**** COUNTRY ****/
+export function useCountrySummary() {
+    return useQuery(
+        firestore
+            .collection('countrySummary')
+            .orderBy('Confirmed', 'desc')
+            .limit(20)
+    )
+}
+
+/**** CONTINENT ****/
+export function useContinentSummary() {
+    return useQuery(
+        firestore.collection('continentSummary').orderBy('Confirmed', 'desc')
+    )
+}
+
 /**** ITEMS ****/
 /* Example query functions (modify to your needs) */
 

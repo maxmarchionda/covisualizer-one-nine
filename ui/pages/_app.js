@@ -1,12 +1,18 @@
 import { ChakraProvider, css, Global } from '@chakra-ui/core'
 import seo from '../seo.config.js'
 import { DefaultSeo } from 'next-seo'
-import { customTheme } from '../ui/utils/theme.js'
+import { customTheme } from '../utils/theme.js'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
     return (
-        <ChakraProvider resetCSS theme={customTheme}>
-            <Global
+        <>
+            <Head>
+                <title>Covisualizer</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <ChakraProvider resetCSS theme={customTheme}>
+                {/* <Global
                 styles={css`
                     #__next {
                         height: 100%;
@@ -20,10 +26,11 @@ function MyApp({ Component, pageProps }) {
                         src: url('/fonts/Crimson_Text');
                     }
                 `}
-            />
-            <DefaultSeo {...seo} />
-            <Component {...pageProps} />
-        </ChakraProvider>
+            /> */}
+                <DefaultSeo {...seo} />
+                <Component {...pageProps} />
+            </ChakraProvider>
+        </>
     )
 }
 

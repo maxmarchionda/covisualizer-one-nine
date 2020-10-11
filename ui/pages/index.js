@@ -5,14 +5,12 @@ import Nav from '../components/nav'
 
 function Home() {
     return (
-        <>
-            {/* <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head> */}
-            <Nav />
-            <Dashboard />
-        </>
+        <div className="container">
+            <main>
+                <Nav />
+                <Dashboard />
+            </main>
+        </div>
     )
 }
 

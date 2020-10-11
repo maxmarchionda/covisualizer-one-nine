@@ -22,8 +22,7 @@ def data_prep(event, context):
     """
     # cols = ['Confirmed', 'Deaths', 'Recovered', 'Active', 'Incident_Rate']
     df_countries_cases, df_continents_cases = create_global_datasets()
-    print(df_continents_cases.head(5))
-
+    print('Created global datasets')
     for index, row in df_continents_cases.iterrows():
         payload = {
             u'Continent': index,
@@ -48,6 +47,7 @@ def data_prep(event, context):
         country_ref = db.collection(u'countrySummary').document(index)
         batch.set(country_ref, payload)
     batch.commit()
+    print('Wrote global datasets to firestore')
 
 
 if __name__ == "__main__":

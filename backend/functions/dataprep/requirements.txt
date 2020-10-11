@@ -1,0 +1,4 @@
+firebase_admin==4.4.0
+pandas
+numpy
+pycountry_convert
