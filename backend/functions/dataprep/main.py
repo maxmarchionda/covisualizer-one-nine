@@ -38,6 +38,7 @@ def data_prep(event, context):
     for index, row in df_countries_cases.iterrows():
         payload = {
             u'Country': index,
+            u'CountryName': row['country_name'],
             u'Confirmed': row['Confirmed'],
             u'Deaths': row['Deaths'],
             u'Recovered': row['Recovered'],

@@ -26,10 +26,8 @@ export function createUser(uid, data) {
 /**** COUNTRY ****/
 export function useCountrySummary() {
     return useQuery(
-        firestore
-            .collection('countrySummary')
-            .orderBy('Confirmed', 'desc')
-            .limit(20)
+        firestore.collection('countrySummary').orderBy('Confirmed', 'desc')
+        // .limit(20)
     )
 }
 

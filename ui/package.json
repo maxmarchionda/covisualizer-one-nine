@@ -10,6 +10,7 @@
     "dependencies": {
         "@chakra-ui/core": "^1.0.0-rc.5",
         "@nivo/bar": "^0.62.0",
+        "@nivo/geo": "^0.62.0",
         "@nivo/line": "^0.62.0",
         "@nivo/stream": "^0.62.0",
         "axios": "^0.20.0",

@@ -15,7 +15,7 @@ import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 const Nav = () => {
     const { colorMode, toggleColorMode } = useColorMode()
     const icon = useColorModeValue(<RiSunFill />, <RiMoonFill />)
-    const logoSrc = useColorModeValue('cov19.png', 'cov19-white.png')
+    const logoSrc = useColorModeValue('cov19-new.png', 'cov19-white.png')
 
     return (
         <Flex
@@ -24,7 +24,7 @@ const Nav = () => {
             w="100%"
             h="69px"
         >
-            <Image src={logoSrc} h="50px"></Image>
+            <Image src="cov19-new.png" h="50px"></Image>
             <Heading visibility="hidden">Covisualizer 19</Heading>
             <Box className="button-box">
                 <Button colorScheme="black" size="sm" variant="outline">

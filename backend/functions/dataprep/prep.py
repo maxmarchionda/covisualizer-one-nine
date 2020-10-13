@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import pycountry_convert as pc
+import pycountry
 
 # Defininng Function for getting continent code for country.
 
@@ -159,7 +160,7 @@ def create_global_datasets():
     df_countries_cases = df_covid19.copy().drop(
         ['Lat', 'Long_', 'continent', 'Last_Update'], axis=1)
     df_countries_cases.index = df_countries_cases["country"]
-    df_countries_cases = df_countries_cases.drop(['country'], axis=1)
+    # df_countries_cases = df_countries_cases.drop(['country'], axis=1)
 
     df_continents_cases = df_covid19.copy().drop(
         ['Lat', 'Long_', 'country', 'Last_Update'], axis=1)
@@ -168,4 +169,16 @@ def create_global_datasets():
     df_countries_cases.fillna(0, inplace=True)
     df_continents_cases.fillna(0, inplace=True)
     print(df_countries_cases.head(3))
+
+    list_names = [i.name for i in list(pycountry.countries)]
+
+    def country_flag(df):
+        if (df['country'] in list_names):
+            return pycountry.countries.search_fuzzy(df['country'])[0].alpha_3
+        else:
+            return 'Invalid Code'
+
+    df_countries_cases['country_name'] = df_countries_cases.apply(
+        country_flag, axis=1)
+    print(df_countries_cases.head(5))
     return df_countries_cases, df_continents_cases
